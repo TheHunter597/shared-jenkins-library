@@ -1,4 +1,4 @@
-def call(){
+def call(String tag){
     echo "logging in"
     withCredentials([
             usernamePassword(
