@@ -1,5 +1,4 @@
 #! groovy
-
 public class DockerUtils {
     String baseUrl = "thehunter597/mongobun:"
     static void buildImage(String tag,baseUrl=null){
