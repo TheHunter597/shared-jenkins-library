@@ -1,20 +1,20 @@
 #! groovy
 
-class DockerUtils {
+public class DockerUtils {
     String baseUrl = "thehunter597/mongobun:"
-    static buildImage(String tag,baseUrl=null){
+    static void buildImage(String tag,baseUrl=null){
         if (baseUrl == null){
             baseUrl = DockerUtils.baseUrl
         }
         sh "docker build -t ${baseUrl}${tag} ."
     }
-    static pushImage(String tag,baseUrl=null){
+    static void pushImage(String tag,baseUrl=null){
         if (baseUrl == null){
             baseUrl = DockerUtils.baseUrl
         }
         sh "docker push ${baseUrl}${tag}"
     }
-    static loginToDockerHub(String credentialId){
+    static void loginToDockerHub(String credentialId){
         withCredentials([
             usernamePassword(
             credentialsId: "$credentialId",
